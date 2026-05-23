@@ -3,65 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daksman Landing Page</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Daksman — Confidence That Lasts</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <img src="../assets/logo.png" alt="Logo">
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <button>Order Now</button>
+
+<header class="site-header">
+    <a href="/" class="logo-link">
+        <img src="/assets/logo.png" alt="Daksman" class="logo">
+    </a>
+    <nav class="site-nav">
+        <a href="/" class="active">Home</a>
+        <a href="#">Blog</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact</a>
+        <button type="button" class="btn btn-nav">Order Now</button>
     </nav>
+    <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
 </header>
-<div class="content-1">
-    <div class="image-container">
-        <div class="overlay">
-            <h1>CONFIDENCE THAT LASTS</h1>
-            <p>A discreet intimate wellness wipe designed for responsible adult use— temporarily reduce sensitivity, have better control and confidence. Gentle and quick-acting, it ensures comfort and safety so you can focus on a more satisfying experience.</p>
-            <button class="rect-btn">About Us</button>
-        </div>
-</div>
-<div class="content-2">
-    <div class="card">
-        <img src="../assets/product.jpg" alt="Product">
-        <h2>DAKSMAN WIPES</h2>
-        <p>A single-use wipe formulated to help temporarily reduce sensitivity.</p>
-        <button class="order-btn">Order Now</button>
+
+<section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+        <h1>CONFIDENCE THAT LASTS</h1>
+        <p>A discreet intimate wellness wipe designed for responsible adult use— temporarily reduce sensitivity, have better control and confidence. Gentle and quick-acting, it ensures comfort and safety so you can focus on a more satisfying experience.</p>
+        <button type="button" class="btn btn-primary">ORDER NOW <span class="arrow" aria-hidden="true">→</span></button>
     </div>
-    <div class="info">
-        <div class="bullet">
-            <h3>How it Works:</h3>
-            <p>Applied externally before activity</p>
-        </div>
-        <div class="bullet">
-            <h3>How to use:</h3>
-            <ul>
-                <li>Apply – Open the wipe and gently rub over the tip and shaft.</li>
-                <li>Wait – Give it 3–5 minutes to take effect.</li>
-                <li>Enjoy – Wipe off any excess if needed, then proceed with confidence.</li>
-            </ul>
-        </div>
-        <div class="bullet">
-            <h3>Safety Instructions:</h3>
-            <ul>
-                <li>For Adult use only (18+)</li>
-                <li>Do not use on irritated skin</li>
-                <li>Discontinue if irritation occurs</li>
-                <li>Consult a doctor if needed</li>
-            </ul>
+</section>
+
+<section class="product-section">
+    <div class="product-section__inner">
+        <article class="product-card">
+            <div class="product-card__image">
+                <img src="/assets/product.jpg" alt="Daksman Wipes product packaging">
+            </div>
+            <div class="product-card__body">
+                <div class="product-card__text">
+                    <h2>DAKSMAN Wipes</h2>
+                    <p>A single-use wipe formulated to help temporarily reduce sensitivity.</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm">ORDER NOW <span class="arrow" aria-hidden="true">→</span></button>
+            </div>
+        </article>
+
+        <div class="product-info">
+            <div class="info-block">
+                <div class="info-block__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+                </div>
+                <div>
+                    <h3>How it Works:</h3>
+                    <p>Applied externally before activity</p>
+                </div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </div>
+                <div>
+                    <h3>How to Use:</h3>
+                    <ul>
+                        <li><strong>Apply</strong> – Open the wipe and gently rub over the tip and shaft.</li>
+                        <li><strong>Wait</strong> – Give it 3–5 minutes to take effect.</li>
+                        <li><strong>Enjoy</strong> – Wipe off any excess if needed, then proceed with confidence.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-block">
+                <div class="info-block__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 7v5c0 5 3.8 9.7 8 11 4.2-1.3 8-6 8-11V7l-8-5z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <div>
+                    <h3>Safety Instructions:</h3>
+                    <ul>
+                        <li>For Adult use only (18+)</li>
+                        <li>Do not use on irritated skin</li>
+                        <li>Discontinue if irritation occurs</li>
+                        <li>Consult a doctor if needed</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="content-3">
-    <img src="../assets/logo.png" alt="Logo">
-    <h1>What Makes Our Product Stand Out?</h1>
+</section>
+
+<section class="about-section">
+    <img src="/assets/logo.png" alt="Daksman" class="about-section__logo">
+    <h2>What Makes Our Product Stand Out?</h2>
     <p>Our wipes are designed scientifically to support stamina and comfort. They contain mild desensitizing agents to help manage sensitivity, along with skin-conditioning components that soothe and protect delicate skin. Each ingredient is chosen for effectiveness and safety, following quality standards to ensure a reliable experience. However, we strongly recommend consulting a doctor first or perform a patch test to avoid potential allergic reactions before use.</p>
     <p>We offer a discreetly-packaged, easy-to-use wipes designed specifically for modern men seeking extended performance and improved confidence. Proudly introduced as the first product of its kind in the Philippines, it brings a unique and new level of accessibility and quality to the local market, helping couples enhance intimacy while maintaining comfort and trust.</p>
-</div>
-<script src="../js/script.js"></script>
+</section>
+
+<section class="feedback-section">
+    <div class="feedback-section__overlay"></div>
+    <div class="feedback-section__content">
+        <h2>CLIENT FEEDBACK</h2>
+        <blockquote>
+            “Using this product helped me reduce my performance anxiety and allowed me to focus more on emotional connection and mutual satisfaction, which helped strengthen our communication and our relationship.”
+        </blockquote>
+        <div class="stars" aria-label="5 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="feedback-user">user10069654321</p>
+        <div class="feedback-avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+    </div>
+</section>
+
+<section class="faq-section">
+    <div class="faq-section__visual" role="img" aria-label="Man holding Daksman product"></div>
+    <div class="faq-panel">
+        <h2>Do you have questions?</h2>
+        <div class="faq-list">
+            <details class="faq-item" open>
+                <summary>Is the packaging discreet?</summary>
+                <p>Orders are shipped in plain black packaging. There won't be any product name printed outside of the box.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is it safe?</summary>
+                <p>Our wipes are formulated with mild desensitizing agents and skin-conditioning components. Always follow the safety instructions and consult a doctor if you have concerns.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is it FDA compliant?</summary>
+                <p>We follow quality standards for effectiveness and safety. Please refer to product labeling and consult a healthcare professional for regulatory details in your region.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How long before it works?</summary>
+                <p>Give it 3–5 minutes after application for the wipe to take effect before activity.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Can it be used regularly?</summary>
+                <p>Use as directed on the packaging. If irritation occurs, discontinue use and consult a doctor.</p>
+            </details>
+        </div>
+        <div class="faq-cta">
+            <p>My question is not here.</p>
+            <a href="/contact" class="btn btn-light">CONNECT WITH US <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="site-footer__inner">
+        <div class="footer-brand">
+            <img src="/assets/logo.png" alt="Daksman" class="footer-logo">
+            <p>PSE Tower, 5th Avenue corner 28th Street,<br>BGC 1634, Taguig</p>
+            <p class="footer-contact"><a href="tel:+63437235523">(043) 723-5523</a><br><a href="mailto:contact@daksman">contact@daksman</a></p>
+        </div>
+        <div class="footer-links">
+            <a href="/about">About Us</a>
+            <a href="#">Product</a>
+            <a href="#">Ingredients</a>
+            <a href="#">FAQs</a>
+            <a href="#">Privacy &amp; Discretion</a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">X</a>
+            <a href="#">Threads</a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Shopee</a>
+            <a href="#">Lazada</a>
+            <a href="#">eBay</a>
+            <a href="#">Alibaba</a>
+        </div>
+    </div>
+    <p class="site-footer__copy">© 2024 Daksman. All rights reserved.</p>
+</footer>
+
+<button type="button" class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="/js/script.js"></script>
 </body>
 </html>

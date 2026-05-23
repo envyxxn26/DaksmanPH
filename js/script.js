@@ -1,14 +1,41 @@
-// JavaScript code for the landing page
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const siteNav = document.querySelector('.site-nav');
+    const backToTop = document.querySelector('.back-to-top');
+    const faqItems = document.querySelectorAll('.faq-item');
+    const contactForm = document.querySelector('.contact-form');
 
-// Example: Toggle FAQ answers
-document.addEventListener('DOMContentLoaded', function() {
-    const questions = document.querySelectorAll('.frame-91');
-    questions.forEach(question => {
-        question.addEventListener('click', function() {
-            const answer = this.nextElementSibling;
-            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    if (menuToggle && siteNav) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = siteNav.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+    }
+
+    faqItems.forEach((item) => {
+        item.addEventListener('toggle', () => {
+            if (!item.open) return;
+            faqItems.forEach((other) => {
+                if (other !== item) other.open = false;
+            });
         });
     });
-});
 
-// Add more JavaScript functionality as needed
+    if (backToTop) {
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 400);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for reaching out. We will get back to you soon.');
+            contactForm.reset();
+        });
+    }
+});
