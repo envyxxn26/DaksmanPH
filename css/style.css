@@ -373,13 +373,39 @@ ul { list-style: none; }
 /* ── FAQ section ── */
 .faq-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.1fr);
+    grid-auto-rows: 1fr;
+    gap: 32px;
     min-height: 560px;
+    align-items: stretch;
 }
 
 .faq-section__visual {
-    background: var(--black) url('../assets/FAQ.png') center / cover no-repeat;
-    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--black);
+    padding: 0;
+    align-self: stretch;
+}
+
+.faq-section__visual img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+/* On small screens, stack and let image size by width */
+@media (max-width: 768px) {
+    .faq-section {
+        grid-template-columns: 1fr;
+    }
+    .faq-section__visual img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .faq-panel {
@@ -434,6 +460,13 @@ ul { list-style: none; }
     line-height: 1.7;
     padding-bottom: 16px;
     color: rgba(255, 255, 255, 0.92);
+}
+
+/* Smooth FAQ content wrapper used by JS animation */
+.faq-content {
+    overflow: hidden;
+    height: 0;
+    transition: height 260ms ease;
 }
 
 .faq-cta {
