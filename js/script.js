@@ -113,10 +113,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Thank you for reaching out. We will get back to you soon.');
-            contactForm.reset();
+
+            const formData = new FormData(contactForm);
+            const payload = new URLSearchParams();
+            formData.forEach((value, key) => payload.append(key, value));
+
+            try {
+                const response = await fetch(contactForm.action || '/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: payload.toString(),
+                });
+
+                const result = await response.json();
+                if (response.ok && result.success) {
+                    alert('Thank you for reaching out. Your message has been sent.');
+                    contactForm.reset();
+                } else {
+                    alert(result.error || 'Unable to send your message. Please try again later.');
+                }
+            } catch (error) {
+                alert('Unable to send your message. Please try again later.');
+                console.error(error);
+            }
         });
     }
 });
