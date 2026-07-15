@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us — Daksman</title>
+    <title>Blogs — Daksman</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -17,7 +17,8 @@
     </a>
     <nav class="site-nav">
         <a href="/">Home</a>
-        <a href="/about" class="active">About Us</a>
+        <a href="/blogs" class="active">Blog</a>
+        <a href="/about">About Us</a>
         <a href="/contact">Contact</a>
         <button type="button" class="btn btn-nav order-now-trigger">Order Now</button>
     </nav>
@@ -26,13 +27,31 @@
     </button>
 </header>
 
-<main class="page-main about-page">
+<main class="page-main blog-page">
     <div class="page-split">
         <div class="page-split__text">
-            <h1>About Us</h1>
-            <p class="page-subtitle">Care That Respects Your Privacy</p>
-            <p>We are a Philippine-based company dedicated to normalize self-care in millions of Filipino men by creating innovative and discreet personal care solutions that improves your confidence and your relationship intimacy. Our mission is to provide high-quality, easy-to-use products that help individuals feel more in control while maintaining comfort, privacy, and trust.</p>
-            <p>Our product is a single-use wipe formulated to help temporarily reduce sensitivity. It is applied externally before activity and designed for convenience and discretion—simply open one sachet, gently apply to the external area, and allow it to dry completely before engaging in activity. Wash your hands after application. For adults 18+ only. Do not use on irritated skin, discontinue use if irritation occurs, and consult a doctor if needed.</p>
+            <h1>Our Blog</h1>
+            <p class="page-subtitle">Stories, updates, and community notes from the Daksman team.</p>
+            <div class="blog-empty-state">
+                <p>No blogs available yet.</p>
+                <a href="#" class="blog-submit-link">Want to submit an entry?</a>
+            </div>
+            <div class="blog-entry-status" role="status" aria-live="polite"></div>
+            <form class="blog-entry-form" action="/blogs/submit" method="post" enctype="multipart/form-data">
+                <div class="blog-entry-form__field">
+                    <label for="blog-title">Title</label>
+                    <input id="blog-title" name="title" type="text" placeholder="Enter blog title" required>
+                </div>
+                <div class="blog-entry-form__field">
+                    <label for="blog-date">Date Submitted</label>
+                    <input id="blog-date" name="dateSubmitted" type="date" required>
+                </div>
+                <div class="blog-entry-form__field">
+                    <label for="blog-image">Upload a Picture</label>
+                    <input id="blog-image" name="image" type="file" accept="image/*">
+                </div>
+                <button type="submit" class="btn btn-primary btn-confirm">Submit</button>
+            </form>
         </div>
         <div class="page-split__visual">
             <img src="/assets/product.jpg" alt="Daksman Wipes product packaging">
@@ -76,7 +95,7 @@
         <h2 id="order-modal-title">Order from one of our stores</h2>
         <p>Select your preferred marketplace to complete your purchase.</p>
         <div class="order-modal__grid">
-            <a href="https://https://ph.shp.ee/6Us81rXE" target="_blank" rel="noopener noreferrer" class="order-modal__item">
+            <a href="https://ph.shp.ee/6Us81rXE" target="_blank" rel="noopener noreferrer" class="order-modal__item">
                 <img src="/assets/shopee_logo.png" alt="Shop on Shopee">
             </a>
             <a href="https://vt.tiktok.com/ZSXkUbWVe/?page=TikTokShop" target="_blank" rel="noopener noreferrer" class="order-modal__item">

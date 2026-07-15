@@ -3,6 +3,15 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
@@ -54,6 +63,25 @@ app.post('/contact', async (req, res) => {
       'Message:',
       message,
     ].join('\n'),
+    html: `
+      <div style="font-family: Arial, sans-serif; color: #111; padding: 24px;">
+        <div style="text-align: center; margin-bottom: 24px;">
+          <img src="cid:daksmanLogo" alt="Daksman logo" style="max-width: 220px; height: auto;" />
+        </div>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Hide identity:</strong> ${hide_identity ? 'Yes' : 'No'}</p>
+        <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+        <p><strong>Message:</strong></p>
+        <div style="white-space: pre-wrap; line-height: 1.6;">${escapeHtml(message)}</div>
+      </div>
+    `,
+    attachments: [
+      {
+        filename: 'logo.png',
+        path: path.join(ROOT, 'assets', 'logo.png'),
+        cid: 'daksmanLogo',
+      },
+    ],
   };
 
   try {
