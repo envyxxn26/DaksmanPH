@@ -20,7 +20,7 @@
         <a href="#">Blog</a>
         <a href="/about">About Us</a>
         <a href="/contact">Contact</a>
-        <a href="https://shopee.ph/eightconcept?uls_trackid=564lrea301oh&utm_content=3zTtwEVHeEfiXvKkqCg6HGYtKhUb"><button type="button" class="btn btn-nav">Order Now</button></a>
+        <button type="button" class="btn btn-nav order-now-trigger">Order Now</button>
     </nav>
     <button type="button" class="menu-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -32,7 +32,7 @@
     <div class="hero__content">
         <h1>CONFIDENCE THAT LASTS</h1>
         <p>A discreet intimate wellness wipe designed for responsible adult use— temporarily reduce sensitivity, have better control and confidence. Gentle and quick-acting, it ensures comfort and safety so you can focus on a more satisfying experience.</p>
-        <a href="https://shopee.ph/eightconcept?uls_trackid=564lrea301oh&utm_content=3zTtwEVHeEfiXvKkqCg6HGYtKhUb"><button type="button" class="btn btn-primary">ORDER NOW <span class="arrow" aria-hidden="true">→</span></button></a>
+        <button type="button" class="btn btn-primary order-now-trigger">ORDER NOW <span class="arrow" aria-hidden="true">→</span></button>
     </div>
 </section>
 
@@ -164,22 +164,41 @@
             <a href="#">Privacy &amp; Discretion</a>
         </div>
         <div class="footer-links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">X</a>
-            <a href="#">Threads</a>
+            <a href="https://www.facebook.com/daksmanph" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.instagram.com/daksmanph/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.threads.com/@daksmanph" target="_blank" rel="noopener noreferrer">Threads</a>
+            <a href="https://www.tiktok.com/@daksmanph" target="_blank" rel="noopener noreferrer">Tiktok</a>
         </div>
         <div class="footer-links">
-            <a href="#">Shopee</a>
-            <a href="#">Lazada</a>
-            <a href="#">eBay</a>
-            <a href="#">Alibaba</a>
+            <a href="https://shopee.ph/eightconcept?categoryId=100630&entryPoint=ShopByPDP&itemId=52310231355" target="_blank" rel="noopener noreferrer">Shopee</a>
+            <a href="https://vt.tiktok.com/ZSXkUbWVe/?page=TikTokShop" target="_blank" rel="noopener noreferrer">Tiktok Shop</a>
+            <a href="https://www.lazada.com.ph/shop/8-concept-store/?itemId=15506551950&spm=a2o4l.pdp_revamp.seller.1.5228156aIeOneW&path=promotion-440898-0.htm&tab=promotion&channelSource=pdp" target="_blank" rel="noopener noreferrer">Lazada</a>
         </div>
     </div>
     <p class="site-footer__copy">© 2024 Daksman. All rights reserved.</p>
 </footer>
 
 <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
+
+<div class="order-modal" aria-hidden="true">
+    <div class="order-modal__backdrop" data-close-modal></div>
+    <div class="order-modal__panel" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+        <button type="button" class="order-modal__close" aria-label="Close order options">×</button>
+        <h2 id="order-modal-title">Order from one of our stores</h2>
+        <p>Select your preferred marketplace to complete your purchase.</p>
+        <div class="order-modal__grid">
+            <a href="https://shopee.ph/eightconcept?categoryId=100630&entryPoint=ShopByPDP&itemId=52310231355" target="_blank" rel="noopener noreferrer" class="order-modal__item">
+                <img src="/assets/shopee_logo.png" alt="Shop on Shopee">
+            </a>
+            <a href="https://vt.tiktok.com/ZSXkUbWVe/?page=TikTokShop" target="_blank" rel="noopener noreferrer" class="order-modal__item">
+                <img src="/assets/tiktokshop_logo.png" alt="Shop on TikTok Shop">
+            </a>
+            <a href="https://www.lazada.com.ph/shop/8-concept-store/?itemId=15506551950&spm=a2o4l.pdp_revamp.seller.1.5228156aIeOneW&path=promotion-440898-0.htm&tab=promotion&channelSource=pdp" target="_blank" rel="noopener noreferrer" class="order-modal__item">
+                <img src="/assets/lazada_logo.png" alt="Shop on Lazada">
+            </a>
+        </div>
+    </div>
+</div>
 
 <script src="/js/script.js"></script>
 </body>

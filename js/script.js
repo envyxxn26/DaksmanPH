@@ -31,6 +31,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const orderModal = document.querySelector('.order-modal');
+    const orderTriggers = document.querySelectorAll('.order-now-trigger');
+    const orderClose = document.querySelector('.order-modal__close');
+    const orderBackdrop = document.querySelector('[data-close-modal]');
+
+    function openOrderModal() {
+        if (!orderModal) return;
+        orderModal.classList.add('is-open');
+        orderModal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeOrderModal() {
+        if (!orderModal) return;
+        orderModal.classList.remove('is-open');
+        orderModal.setAttribute('aria-hidden', 'true');
+    }
+
+    orderTriggers.forEach((trigger) => {
+        trigger.addEventListener('click', openOrderModal);
+    });
+
+    if (orderClose) {
+        orderClose.addEventListener('click', closeOrderModal);
+    }
+
+    if (orderBackdrop) {
+        orderBackdrop.addEventListener('click', closeOrderModal);
+    }
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeOrderModal();
+        }
+    });
+
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();

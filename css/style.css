@@ -164,7 +164,7 @@ ul { list-style: none; }
 }
 
 .hero__content h1 {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     font-size: clamp(2rem, 5vw, 3.2rem);
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -308,7 +308,7 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--black) url('../assets/BG_Content_1.png') center / cover no-repeat;
+    background: var(--black) url('../assets/CLIENT FEEDBACK.png') center / cover no-repeat;
     padding: 80px 20px;
 }
 
@@ -378,7 +378,7 @@ ul { list-style: none; }
 }
 
 .faq-section__visual {
-    background: var(--black) url('../assets/BG_Content_1.png') 30% center / cover no-repeat;
+    background: var(--black) url('../assets/FAQ.png') center / cover no-repeat;
     min-height: 400px;
 }
 
@@ -525,6 +525,125 @@ ul { list-style: none; }
 }
 
 .back-to-top:hover { background: var(--red-dark); }
+
+.order-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.order-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.order-modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.72);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.order-modal.is-open .order-modal__backdrop {
+    opacity: 1;
+}
+
+.order-modal__panel {
+    position: relative;
+    z-index: 1;
+    width: min(560px, calc(100% - 40px));
+    background: rgba(10, 10, 10, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 22px;
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    text-align: center;
+    transform: translateY(18px) scale(0.96);
+    opacity: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.order-modal.is-open .order-modal__panel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.order-modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.order-modal__close:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: scale(1.05);
+}
+
+.order-modal__panel h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.order-modal__panel p {
+    margin-bottom: 26px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.95rem;
+}
+
+.order-modal__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.order-modal__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.order-modal__item img {
+    max-height: 54px;
+    width: auto;
+    transition: transform 0.25s ease;
+}
+
+.order-modal__item:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+.order-modal__item:hover img {
+    transform: scale(1.08);
+}
+
+@media (max-width: 768px) {
+    .order-modal__grid { grid-template-columns: 1fr; }
+}
 
 /* ── Responsive ── */
 @media (max-width: 992px) {

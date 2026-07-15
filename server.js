@@ -8,6 +8,7 @@ const ROOT = __dirname;
 app.use('/css', express.static(path.join(ROOT, 'css')));
 app.use('/js', express.static(path.join(ROOT, 'js')));
 app.use('/assets', express.static(path.join(ROOT, 'assets')));
+app.use(express.static(path.join(ROOT, 'html'), { extensions: ['html'] }));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(ROOT, 'html', 'index.html'));
