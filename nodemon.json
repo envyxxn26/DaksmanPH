@@ -1,4 +1,4 @@
 {
-  "watch": ["server.js", "html", "css", "js", "assets"],
+  "watch": ["server.js", "api", "html", "css", "js", "assets"],
   "ext": "js,html,css,json,png,jpg,jpeg,svg,webp"
 }
