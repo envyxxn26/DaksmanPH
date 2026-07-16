@@ -12,10 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth FAQ open/close animation (single item open) — replaces native toggle behavior
     faqItems.forEach((item) => {
         const summary = item.querySelector('summary');
-        // Wrap content after summary into .faq-content if not already wrapped
         let content = item.querySelector('.faq-content');
         if (!content) {
             content = document.createElement('div');
@@ -26,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             item.appendChild(content);
         }
 
-        // Initialize styles
         content.style.overflow = 'hidden';
         content.style.transition = 'height 260ms ease';
         if (item.open) {
