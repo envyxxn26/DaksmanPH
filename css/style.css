@@ -742,15 +742,6 @@ ul { list-style: none; }
     .site-footer__inner {
         grid-template-columns: 1fr;
     }
-
-    .page-split,
-    .page-split--reverse {
-        grid-template-columns: 1fr;
-    }
-
-    .page-split--reverse .page-split__visual {
-        order: -1;
-    }
 }
 
 /* ── Inner pages (About, Contact) ── */
@@ -910,4 +901,59 @@ ul { list-style: none; }
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+/* About & Contact — mobile (must follow .page-split base styles) */
+@media (max-width: 768px) {
+    .page-main {
+        padding: calc(var(--header-h) + 24px) 20px 48px;
+    }
+
+    .page-split,
+    .page-split--reverse {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .page-split--reverse .page-split__visual {
+        order: -1;
+    }
+
+    .page-split__text h1,
+    .page-split__form h1 {
+        font-size: clamp(1.75rem, 8vw, 2.2rem);
+    }
+
+    .page-split__visual img {
+        max-height: 280px;
+        object-fit: cover;
+    }
+
+    .contact-form,
+    .contact-intro {
+        max-width: none;
+    }
+
+    .btn-confirm {
+        width: 100%;
+        align-self: stretch;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-split__text p,
+    .contact-intro {
+        font-size: 0.85rem;
+        line-height: 1.75;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
 }
