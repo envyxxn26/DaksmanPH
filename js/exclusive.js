@@ -146,5 +146,73 @@ window.addEventListener("load",()=>{
 
 });
 
-console.log(
-);
+// Carousel functionality for men's health section
+const carousel = document.querySelector(".magazine-carousel");
+const indicatorsContainer = document.getElementById("indicators");
+const carouselCards = document.querySelectorAll(".magazine-carousel .magazine-card");
+
+let currentIndex = 0;
+let autoScrollTimeout;
+let autoScrollInterval;
+let isUserInteracting = false;
+
+// Create indicators
+carouselCards.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+        goToSlide(index);
+        isUserInteracting = true;
+        stopAutoScroll();
+    });
+    indicatorsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".carousel-indicators .dot");
+
+function updateCarousel() {
+    if (carousel) {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+        });
+    }
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % carouselCards.length;
+    updateCarousel();
+}
+
+function goToSlide(index) {
+    currentIndex = index;
+    updateCarousel();
+}
+
+function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+        nextSlide();
+    }, 5000);
+}
+
+function stopAutoScroll() {
+    clearInterval(autoScrollInterval);
+    clearTimeout(autoScrollTimeout);
+}
+
+function startAutoScrollTimer() {
+    stopAutoScroll();
+    isUserInteracting = false;
+    autoScrollTimeout = setTimeout(() => {
+        startAutoScroll();
+    }, 120000);
+}
+
+// Start the auto-scroll timer on page load
+startAutoScrollTimer();
+
+// Reset timer if user clicks on indicators
+indicatorsContainer.addEventListener("click", () => {
+    startAutoScrollTimer();
+});
