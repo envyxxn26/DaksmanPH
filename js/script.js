@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    if (contactForm) {
+    /*if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -138,5 +138,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error(error);
             }
         });
-    }
+    }*/
 });

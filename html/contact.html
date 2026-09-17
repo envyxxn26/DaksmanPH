@@ -35,30 +35,17 @@
         <div class="page-split__form">
             <h1>Contact</h1>
             <p class="contact-intro">Have Questions? We're Here. No Judgment. No Exposure. Just Honest Support.</p>
-            <form class="contact-form" action="/contact" method="post">
-                <label class="sr-only" for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email Address..." required>
 
-                <label class="checkbox-label">
-                    <input type="checkbox" name="hide_identity">
-                    <span>Hide my Identity</span>
-                </label>
 
-                <label class="sr-only" for="subject">Subject</label>
-                <select id="subject" name="subject" required>
-                    <option value="" disabled selected>Subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="product">Product Question</option>
-                    <option value="order">Order Support</option>
-                    <option value="privacy">Privacy &amp; Discretion</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <label class="sr-only" for="message">Message</label>
-                <textarea id="message" name="message" rows="6" placeholder="My Concern is..." required></textarea>
-
-                <button type="submit" class="btn btn-primary btn-confirm">CONFIRM</button>
+            <form action="https://formsubmit.co/daksmanph@gmail.com" class="contact-form" method="POST">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Your email" required>
+                <label for="name">Message</label>
+                <input type="text" name="name" rows="6" placeholder="My concern is ..." required>
+                <button type="submit" class="btn btn-primary">Send</button>
             </form>
+
+
             <div class="social-icons" aria-label="Social media">
                 <a href="https://www.facebook.com/daksmanph" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
